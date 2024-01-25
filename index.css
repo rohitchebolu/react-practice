@@ -37,11 +37,31 @@
   border: 2px solid black;
 }
 
-.search-bar{
-  padding: 0px 0px 10px 0px;
-}
-
 .res-container{
   display: flex;
   flex-wrap: wrap;
+}
+
+.login-btn{
+  width: 80px;
+}
+
+.body{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px;
+}
+
+.shimmer-ui{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card{
+  margin: 14px;
+  width:200px;
+  height: 270px;
+  padding: 5px 5px;
+  background-color: rgb(227, 222, 222);
+  cursor: pointer;
 }
