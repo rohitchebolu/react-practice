@@ -1,23 +1,24 @@
 const Shimmer = () => {
   return (
-    <div className="shimmer-ui">
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
+    <div className="flex flex-wrap">
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
+      <div className="m-2 p-4 w-[230] h-[280] bg-gray-500"></div>
     </div>
   );
 };

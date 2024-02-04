@@ -3,28 +3,28 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
-  const [userEntryBtn, setUserEntryBtn] = useState("login");
+  const [userEntryBtn, setUserEntryBtn] = useState("Login");
   const onlineStatus = useOnlineStatus();
   return (
     <header>
-      <div className="header">
-        <div className="logo">
+      <div className="flex justify-between  bg-orange-300 shadow-lg">
+        <div className="w-32">
           <img src={LOGO_URL} />
         </div>
         <div className="components">
-          <ul>
-            <li>Status: {onlineStatus === true ? ("🟢") : "🔴"}</li>
-            <li><Link to={"/"}>Home</Link></li>
-            <li><Link to={"/about"}>About Us</Link></li>
-            <li><Link to={"/contactus"}>Contact Us</Link></li>
-            <li><Link to={"/grocery"}>Grocery</Link></li>
-            <li>Cart</li>
+          <ul className="flex m-4 p-4">
+            <li className="px-4">Status: {onlineStatus === true ? ("🟢") : "🔴"}</li>
+            <li className="px-4"><Link to={"/"}>Home</Link></li>
+            <li className="px-4"><Link to={"/about"}>About Us</Link></li>
+            <li className="px-4"><Link to={"/contactus"}>Contact Us</Link></li>
+            <li className="px-4"><Link to={"/grocery"}>Grocery</Link></li>
+            <li className="px-4">Cart</li>
             <button
-              className="login-btn"
+              className="px-4"
               onClick={() => {
-                userEntryBtn === "login"
-                  ? setUserEntryBtn("logout")
-                  : setUserEntryBtn("login");
+                userEntryBtn === "Login"
+                  ? setUserEntryBtn("Logout")
+                  : setUserEntryBtn("Login");
               }}
             >
               {userEntryBtn}
