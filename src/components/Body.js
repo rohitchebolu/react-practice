@@ -1,8 +1,9 @@
 import RestaurantCard, { withDiscountLabel } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filterOfRestaurant, setFilterOfRestaurant] = useState([]);
@@ -19,13 +20,15 @@ const Body = () => {
 
     console.log(json);
     setListOfRestaurant(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilterOfRestaurant(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
+  //console.log(listOfRestaurant);
+  const{logedInUser, setUserName}=useContext(UserContext);
   const RestaurantCardWithDiscount = withDiscountLabel(RestaurantCard);
 
   const statusMessage = useOnlineStatus();
@@ -70,6 +73,10 @@ const Body = () => {
             Top Rated
           </button>
         </div>
+        <div className="m-2 p-2 flex">
+          <label>UserName    </label>
+          <input className="border border-solid border-orange-300 p-1" value={logedInUser} onInput={(e)=>{setUserName(e.target.value)}}/>
+        </div>
       </div>
       <div className="flex flex-wrap">
         {filterOfRestaurant.map((restaurant) => (
@@ -78,7 +85,7 @@ const Body = () => {
             to={"/restaurants/" + restaurant.info.id}
           >
             {restaurant.info.aggregatedDiscountInfoV3 ? (
-              <RestaurantCardWithDiscount resData={restaurant}/>
+              <RestaurantCardWithDiscount resData={restaurant} />
             ) : (
               <RestaurantCard resData={restaurant} />
             )}

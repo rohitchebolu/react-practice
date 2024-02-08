@@ -1,22 +1,25 @@
-import { useState } from "react";
 import ItemsList from "./ItemsList.js";
 
-const RestaurantCategory = ({ resMenu }) => {
-  const [showItems, setShowItems] = useState(false);
+const RestaurantCategory = ({ resMenu, showItems, setShowIndex }) => {
   //console.log(resMenu);
   //const itemsList = resMenu?.itemCards;
-  const handleInput = ()=>{
-    setShowItems(!showItems);
-  }
+  const handleInput = () => {
+    setShowIndex();
+  };
   return (
     <div>
-      <div className="flex justify-between p-4 m-2 bg-gray-50 shadow-lg">
-        <h1 className="font-bold cursor-pointer"  onClick={()=>{handleInput()}}>
+      <div
+        className="flex justify-between p-4 m-2 bg-gray-50 shadow-lg cursor-pointer"
+        onClick={() => {
+          handleInput();
+        }}
+      >
+        <h1 className="font-bold">
           {resMenu.title} ({resMenu.itemCards.length})
         </h1>
         <p>🔽</p>
       </div>
-      {showItems && <ItemsList resList={resMenu.itemCards}/>}
+      {showItems && <ItemsList resList={resMenu.itemCards} />}
     </div>
   );
 };

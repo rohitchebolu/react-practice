@@ -1,22 +1,28 @@
 import React from "react";
 import UserClass from "./UserClass";
+import UserContext from "../utils/UserContext";
 
-class AboutUs extends React.Component{
-  constructor(props){
+class AboutUs extends React.Component {
+  constructor(props) {
     super(props);
     //console.log("Parent constructor");
   }
-  componentDidMount(){
+  componentDidMount() {
     //console.log("Parent Component Did Mount");
   }
-  render(){
+  render() {
     //console.log("Parent Render")
-    return(
+    return (
       <div className="about">
-      <h1>Developed By</h1>
-      <UserClass />
-    </div>
-    )
+        <div>
+          <h1>Logged In As</h1>
+          <UserContext.Consumer>
+            {({ logedInUser }) => <h1>{logedInUser}</h1>}
+          </UserContext.Consumer>
+        </div>
+        <UserClass />
+      </div>
+    );
   }
 }
 
